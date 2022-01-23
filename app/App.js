@@ -2,8 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import Welcome from './screens/Welcome';
 
-const Root = createStackNavigator();
+const Root = createStackNavigator();/* 
 
 const Screen1 = ({ navigation, route }) => (
 	<View style={styles.screen}>
@@ -26,21 +27,23 @@ const Screen2 = ({ navigation, route }) => (
 			}}
 		/>
 	</View>
-)
+) */
 
 
 export default function App() {
   return (
-	<NavigationContainer>
+	  <View style={styles.container}>
+		{/* <Text>Open up App.js to start working on your app!</Text> */}
+		{/* <StatusBar style="auto" /> */}
+	  </View>
+
+	{/* <NavigationContainer>
 		<Root.Navigator>
-			<Root.Screen name="Screen1" component={Screen1} />
-			<Root.Screen name="Screen2" component={Screen2} />
+			<Root.Screen name="Welcome" component={Welcome} />
+			 <Root.Screen name="Screen2" component={Screen2} />
 		</Root.Navigator>
-	</NavigationContainer>
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
+	</NavigationContainer> */}
+	
   );
 }
 
