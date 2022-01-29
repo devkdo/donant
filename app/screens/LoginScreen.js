@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import colours from '../config/colours';
 
 function LoginScreen(props) {
 	return (
@@ -12,9 +13,9 @@ function LoginScreen(props) {
 				<Text>Catalyst Your Dream Into Reality</Text>
 			</View>
 			<View style={styles.button}>
-				<Text style={[styles.buttonText, styles.setColorWhite]}>Login</Text>
+				<Text style={[styles.buttonText, styles.setColorPrimary]}>Login</Text>
 			</View>
-			<View style={[styles.button, styles.setBackgroundWhite]}>
+			<View style={[styles.button, styles.setBackgroundPrimary]}>
 				<Text style={styles.buttonText}>Signup</Text>
 			</View>
 		</ImageBackground>
@@ -39,20 +40,20 @@ const styles = StyleSheet.create({
 	button: {
 		width: "100%",
 		height: 70,
-		backgroundColor: "black",
+		backgroundColor: colours.black,
 		justifyContent: 'center',
 	},
 	buttonText: {
 		fontSize: 22,
-		color: "black",
+		color: colours.black,
 		textAlign: 'center',
 		fontWeight: 'bold',
 	},
-	setColorWhite: {
-		color: "#f0f8ff",
+	setColorPrimary: {
+		color: colours.primary,
 	},
-	setBackgroundWhite: {
-		backgroundColor: "#f0f8ff",
+	setBackgroundPrimary: {
+		backgroundColor: colours.primary,
 	},
 })
 
