@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Pressable, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Button, WhiteButton } from '../components/Button';
 import colours from '../config/colours';
 
-function LoginScreen(props) {
+function LoginScreen({navigation}) {
 	return (
 		<ImageBackground
 			style={styles.background}
@@ -12,11 +13,10 @@ function LoginScreen(props) {
 				<Image style={styles.logo} source={require('../assets/logo-bw.png')}/>
 				<Text>Catalyst Your Dream Into Reality</Text>
 			</View>
-			<View style={styles.button}>
-				<Text style={[styles.buttonText, styles.setColorPrimary]}>Login</Text>
-			</View>
-			<View style={[styles.button, styles.setBackgroundPrimary]}>
-				<Text style={styles.buttonText}>Signup</Text>
+			
+			<View  style={styles.buttonContainer}>
+				<Button title="Login" onPress={() => navigation.navigate('HomeScreen')} />
+				<WhiteButton title="Signup" onPress={() => navigation.navigate('HomeScreen')} />
 			</View>
 		</ImageBackground>
 	);
@@ -37,9 +37,10 @@ const styles = StyleSheet.create({
 		top: 70,
 		alignItems: 'center',
 	},
-	button: {
-		width: "100%",
+	buttonContainer: {
+		width: "80%",
 		height: 70,
+		marginBottom: 50,
 		backgroundColor: colours.black,
 		justifyContent: 'center',
 	},
