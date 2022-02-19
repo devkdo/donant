@@ -1,19 +1,24 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import colours from '../config/colours';
+import LoginScreen from './LoginScreen';
 
-function HomeScreen(props) {
+function HomeScreen({ navigation }) {
 	return (
 		<ImageBackground
 			style={styles.background}
 			source={require("../assets/wood.jpg")}
 		>
 			<View style={styles.logoContainer}>
-				<Image style={styles.logo} source={require('../assets/logo-bw.png')}/>
+				<Image style={styles.logo} source={require('../assets/logo-bw.png')} />
 			</View>
 			<View style={styles.post} />
+			<Button>
+				title="Signout"
+				onPress={() => navigation.navigate('Login')}
+			</Button>
 
-{/* 			<View style={styles.button}>
+			{/* 			<View style={styles.button}>
 				<Text style={[styles.buttonText, styles.setColorPrimary]}>Login</Text>
 			</View>
 			<View style={[styles.button, styles.setBackgroundPrimary]}>
