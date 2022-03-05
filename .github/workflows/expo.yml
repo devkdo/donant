@@ -56,10 +56,10 @@ jobs:
           # Your Expo token, for authentication. (use with secrets)
           token: # optional
           # A custom remote cache key to use for EAS CLI.
-          eas-cache-key: # optional
+#           eas-cache-key: # optional
           # A custom remote cache key to use for Expo CLI.
-          expo-cache-key: # optional
+#           expo-cache-key: # optional
           # Your Expo username, for authentication.
-          username: # optional
+#           username: # optional
           # Your Expo password, for authentication. (use with secrets)
-          password: # optional
+#           password: # optional
