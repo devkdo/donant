@@ -1,0 +1,65 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the development branch
+  push:
+    branches: [ development ]
+  pull_request:
+    branches: [ development ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+      # Runs publish, build, and manage on Expo app
+      - name: Expo GitHub Action
+        # You may pin to the exact commit or the version.
+        # uses: expo/expo-github-action@a522d656e4f6d826cb2c33e4959cac1c13ba4067
+        uses: expo/expo-github-action@7.1.0
+        with:
+          # Expo CLI version to install
+          expo-version: # optional
+          # If Expo CLI should be cached to speed up installation
+          expo-cache: # optional, default is true
+          # EAS CLI version to install
+          eas-version: # optional
+          # If EAS CLI should be cached to speed up installation
+          eas-cache: # optional, default is true
+          # The package manager used to install the CLIs
+          packager: # optional, default is yarn
+          # If the action should patch the ENOSPC errors
+          patch-watchers: # optional, default is true
+          # Your Expo token, for authentication. (use with secrets)
+          token: # optional
+          # A custom remote cache key to use for EAS CLI.
+          eas-cache-key: # optional
+          # A custom remote cache key to use for Expo CLI.
+          expo-cache-key: # optional
+          # Your Expo username, for authentication.
+          username: # optional
+          # Your Expo password, for authentication. (use with secrets)
+          password: # optional
