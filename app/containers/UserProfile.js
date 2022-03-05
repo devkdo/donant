@@ -1,13 +1,13 @@
-import React from 'react'
-import { Image, StyleSheet } from 'react-native'
+import React from "react";
+import { Image, StyleSheet } from "react-native";
 
 export default function UserProfile() {
   return (
     <Image
       style={styles.image}
-      source={{ uri: 'https://www.reactnative.express/static/logo.png' }}
+      source={{ uri: "https://www.reactnative.express/static/logo.png" }}
     />
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -15,4 +15,4 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
   },
-})
+});
