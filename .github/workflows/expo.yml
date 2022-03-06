@@ -57,7 +57,7 @@ jobs:
 #           token: # optional
       - name: Install dependencies
         run: yarn install
-      - name: Publish update
-        run: eas update --auto
+#       - name: Publish update
+#         run: eas update --auto
       - name: Publish app
         run: expo publish --non-interactive
